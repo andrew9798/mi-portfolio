@@ -2,58 +2,130 @@
 // Componente de Navegación
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+<nav
+  class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100"
+>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
       <!-- Logo -->
       <div class="flex-1 flex items-center">
-        <img src="favicon.png" alt="Logo" class="h-15 w-auto"/>
+        <img src="favicon.png" alt="Logo" class="h-15 w-auto" />
       </div>
 
       <!-- Navegación Desktop -->
       <div class="hidden md:flex space-x-8">
-        <a href="#inicio" class="capitalize text-sm font-medium transition-colors duration-200 text-gray-600 hover:text-gray-900">
+        <a
+          href="#inicio"
+          class="capitalize text-sm font-medium transition-colors duration-200 text-gray-600 hover:text-gray-900"
+        >
           Inicio
         </a>
-        <a href="#acerca" class="capitalize text-sm font-medium transition-colors duration-200 text-gray-600 hover:text-gray-900">
+        <a
+          href="#acerca"
+          class="capitalize text-sm font-medium transition-colors duration-200 text-gray-600 hover:text-gray-900"
+        >
           Acerca de Mí
         </a>
-        <a href="#proyectos" class="capitalize text-sm font-medium transition-colors duration-200 text-gray-600 hover:text-gray-900">
+        <a
+          href="#proyectos"
+          class="capitalize text-sm font-medium transition-colors duration-200 text-gray-600 hover:text-gray-900"
+        >
           Proyectos
         </a>
-        <a href="#habilidades" class="capitalize text-sm font-medium transition-colors duration-200 text-gray-600 hover:text-gray-900">
+        <a
+          href="#habilidades"
+          class="capitalize text-sm font-medium transition-colors duration-200 text-gray-600 hover:text-gray-900"
+        >
           Habilidades
         </a>
-        <a href="#contacto" class="capitalize text-sm font-medium transition-colors duration-200 text-gray-600 hover:text-gray-900">
+        <a
+          href="#contacto"
+          class="capitalize text-sm font-medium transition-colors duration-200 text-gray-600 hover:text-gray-900"
+        >
           Contacto
         </a>
       </div>
+      <button
+        id="theme-toggle"
+        class="m-5 p-3 rounded-full bg-light hover:bg-primary transition-colors duration-700"
+      >
+        <!-- Icono de sol (visible en modo oscuro) -->
+        <svg
+          id="theme-toggle-light-icon"
+          class="hidden w-6 h-6 text-primary hover:text-light"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+            fill-rule="evenodd"
+            clip-rule="evenodd"></path>
+        </svg>
+        <!-- Icono de luna (visible en modo claro) -->
+        <svg
+          id="theme-toggle-dark-icon"
+          class="w-6 h-6 text-secondary "
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+          ></path>
+        </svg>
+      </button>
 
       <!-- Botón menú móvil -->
       <button id="menu-button" class="md:hidden p-2">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
     </div>
   </div>
 
   <!-- Menú móvil -->
-  <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100 hidden">
+  <div
+    id="mobile-menu"
+    class="md:hidden bg-white border-t border-gray-100 hidden"
+  >
     <div class="px-4 py-2 space-y-2">
-      <a href="#inicio" class="block w-full text-left px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900">
+      <a
+        href="#inicio"
+        class="block w-full text-left px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900"
+      >
         Inicio
       </a>
-      <a href="#acerca" class="block w-full text-left px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900">
+      <a
+        href="#acerca"
+        class="block w-full text-left px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900"
+      >
         Acerca de Mí
       </a>
-      <a href="#proyectos" class="block w-full text-left px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900">
+      <a
+        href="#proyectos"
+        class="block w-full text-left px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900"
+      >
         Proyectos
       </a>
-      <a href="#habilidades" class="block w-full text-left px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900">
+      <a
+        href="#habilidades"
+        class="block w-full text-left px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900"
+      >
         Habilidades
       </a>
-      <a href="#contacto" class="block w-full text-left px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900">
+      <a
+        href="#contacto"
+        class="block w-full text-left px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900"
+      >
         Contacto
       </a>
     </div>

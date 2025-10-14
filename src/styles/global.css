@@ -7,31 +7,41 @@
   --color-dark: #01011C;
   --color-light: #F5F5F5;
   --color-accent: #d97706;
-  --color-text: #374151;
-  --color-text-light: #9ca3af;
+  --color-text: #1f2937; /* Gris oscuro para modo claro */
+  --color-text-light: #6b7280;
   
   /* Fuentes (opcional) */
   --font-family-serif: 'Playfair Display', serif;
   --font-family-sans: 'Inter', sans-serif;
 }
 
+:root.dark {
+  --color-primary: #B09145;
+  --color-secondary: #211E1E;
+  --color-light: #01011C;
+  --color-dark: #F5F5F5;
+  --color-accent: #fbbf24;
+  --color-text: #e5e7eb; /* Gris claro para modo oscuro */
+  --color-text-light: #bfc3c9;
+}
+
 /* Estilos base para toda la página */
 @layer base {
   body {
     font-family: var(--font-family-serif);
-    color: var(--color-primary);
+    background-color: var(--color-light);
+    color: var(--color-text); /* Usa la variable de texto */
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h4, h5, h6 {
     font-family: var(--font-family-serif);
     color: var(--color-secondary);
     font-weight: 600;
   }
   
-  /* Opcional: Párrafos */
+  /* Texto de párrafos y contenido general */
   p {
-    font-family: var(--font-family-serif);
-    line-height: 1.7;
+    color: var(--color-text);
   }
 }
   
