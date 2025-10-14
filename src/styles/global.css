@@ -1,0 +1,262 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colores personalizados */
+  --color-primary: #B09145;
+  --color-secondary: #211E1E;
+  --color-dark: #01011C;
+  --color-light: #F5F5F5;
+  --color-accent: #d97706;
+  --color-text: #374151;
+  --color-text-light: #9ca3af;
+  
+  /* Fuentes (opcional) */
+  --font-family-serif: 'Playfair Display', serif;
+  --font-family-sans: 'Inter', sans-serif;
+}
+
+/* Estilos base para toda la página */
+@layer base {
+  body {
+    font-family: var(--font-family-serif);
+    color: var(--color-primary);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-serif);
+    color: var(--color-secondary);
+    font-weight: 600;
+  }
+  
+  /* Opcional: Párrafos */
+  p {
+    font-family: var(--font-family-serif);
+    line-height: 1.7;
+  }
+}
+  
+  /* Opcional: También puedes aplicarlo a html */
+  html {
+    font-family: var(--font-family-serif);
+    color: var(--color-primary);
+  }
+
+
+
+/* Estilos personalizados inspirados en Patek Philippe */
+
+/* Variables CSS personalizadas */
+:root {
+  --color-primary: #B09145; /* gold */
+  --color-secondary: #211E1E; /* dark gray */
+  --color-dark: #01011C; /* very dark blue */
+  --color-light: #F5F5F5; /* light gray */
+  --color-accent: #d97706; /* amber-600 */
+  --color-text: #374151; /* gray-700 */
+  --color-text-light: #9ca3af; /* gray-400 */
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+
+/* Estilos base */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Tipografía */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Animaciones personalizadas */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Clases de utilidad para animaciones */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+/* Efectos hover personalizados */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Estilos para botones elegantes */
+.btn-elegant {
+  position: relative;
+  overflow: hidden;
+  transition: all 3s ease;
+}
+
+.btn-elegant::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-elegant:hover::before {
+  left: 100%;
+}
+
+/* Líneas decorativas */
+.decorative-line {
+  position: relative;
+}
+
+.decorative-line::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: var(--color-accent);
+}
+
+/* Efectos de scroll suave */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Estilos para tarjetas */
+.card-elegant {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card-elegant:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
+}
+
+/* Estilos para navegación activa */
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link.active {
+  color: var(--color-accent);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-accent);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .text-5xl {
+    font-size: 2.5rem;
+  }
+  
+  .text-7xl {
+    font-size: 3.5rem;
+  }
+}
+
+/* Estilos para elementos interactivos */
+.interactive-element {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.interactive-element:hover {
+  transform: scale(1.05);
+}
+
+/* Gradientes personalizados */
+.gradient-elegant {
+  background: linear-gradient(135deg, #000000 0%, #1f2937 50%, #000000 100%);
+}
+
+/* Efectos de texto */
+.text-shadow-elegant {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para iconos */
+.icon-elegant {
+  transition: all 0.3s ease;
+}
+
+.icon-elegant:hover {
+  color: var(--color-accent);
+  transform: scale(1.1);
+}

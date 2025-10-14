@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string;
+  content: string;
+}
+
+const { title, content } = Astro.props;
+---
+
+<div
+  class="m-auto flex items-center justify-center flex-col w-36 h-36 hover:shadow-xl rounded-full hover:shadow-black/30 duration-800 group"
+> {
+
+}
+  <img src={content} alt={title} class="w-16 h-16" />
+  <h2
+    class="text-center opacity-0 group-hover:opacity-100 transition-opacity duration-1000 text-sm font-medium mt-2 capitalize"
+  >
+    <p class="text-primary">{title}</p>
+  </h2>
+</div>

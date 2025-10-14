@@ -1,0 +1,138 @@
+---
+import TechElement from "./techElement.astro";
+
+
+const LOGOS = [
+    {
+        title: "html",
+        content:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain-wordmark.svg",
+    },
+    {
+        title: "css",
+        content:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg",
+    },
+    {
+        title: "javaScript",
+        content:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+    },
+    {
+        title: "react",
+        content:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    },
+    {
+        title: "nodeJs",
+        content:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+    },
+    {
+        title: "Astro",
+        content:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg",
+    },
+    {
+        title: "tailwindCss",
+        content:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+    },
+    {
+        title: "mongodb",
+        content:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg",
+    },
+    {
+        title: "MySql",
+        content:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+    },
+    {
+        title: "git",
+        content:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+    },
+    {
+        title: "github",
+        content:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+    },
+    {
+        title: "express",
+        content:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
+    },
+];
+---
+
+<section
+    id="habilidades"
+    class="container m-auto flex-col items-center justify-center flex lg:max-w-full lg:h-screen bg-light"
+>
+    <h2 class="text-4xl md:text-5xl font-serif text-primary font-light mb-6 text-center mt-10">
+        Habilidades y Conocimientos
+    </h2>
+    <div
+        id="knowledge-content"
+        class="bg-white rounded-3xl container max-w-screen-lg grid grid-cols-2 md:grid-cols-4 gap-4 m-8 p-6"
+    >
+        {LOGOS.map((logos) =>  <TechElement {...logos} />)}
+    </div>
+
+</section>
+
+<script>
+    import { gsap } from "gsap";
+
+    // Define los tipos de parámetros para evitar errores de TypeScript
+    const onIntersection = (
+        entries: IntersectionObserverEntry[], 
+        observer: IntersectionObserver
+    ) => {
+        entries.forEach((entry: IntersectionObserverEntry) => {
+            if (entry.isIntersecting) {
+                const section = entry.target as HTMLElement; // Asegúrate de que el target es un elemento HTML
+                console.log("Elemento visible:", section);
+
+                // Configura el estado inicial de la animación
+                gsap.set(section, { opacity: 0, visibility: "hidden", x: 50 });
+
+                // Anima el elemento cuando sea visible
+                gsap.to(section, {
+                    opacity: 1,
+                    visibility: "visible",
+                    x: 0,
+                    duration: 2,
+                    ease: "power1.inOut",
+                });
+
+                // Deja de observar el elemento después de animarlo
+                observer.unobserve(section);
+            }
+        });
+    };
+
+    // Inicializa el Intersection Observer con la función anterior
+    const observer = new IntersectionObserver(onIntersection, {
+        threshold: 0.3, // El 30% del elemento debe ser visible
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+        const section = document.getElementById("knowledge"); // Reemplaza 'id' con el ID literal correcto
+        console.log("Sección seleccionada:", section);
+
+        if (section) {
+            observer.observe(section);
+        }
+    });
+</script>
+
+<style>
+    /* Oculta el contenido de la sección al inicio */
+    #knowledge {
+        opacity: 0;
+        visibility: hidden;
+    }
+</style>
+
