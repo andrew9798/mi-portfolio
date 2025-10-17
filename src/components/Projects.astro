@@ -1,46 +1,48 @@
 ---
 // Componente Projects
 const projects = [
-  {
-    title: "E-commerce Moderno",
-    description: "Plataforma de comercio electrónico completa con React, Node.js y MongoDB. Incluye sistema de pagos, gestión de inventario y panel administrativo.",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-    liveUrl: "#",
-    githubUrl: "#"
-  },
+  // {
+  //   title: "E-commerce Moderno",
+  //   description: "Plataforma de comercio electrónico completa con React, Node.js y MongoDB. Incluye sistema de pagos, gestión de inventario y panel administrativo.",
+  //   technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+  //   liveUrl: "#",
+  //   githubUrl: "#",
+  //   imageUrl: "/dashboard.png"
+  // },
   {
     title: "Dashboard Analytics",
     description: "Panel de control interactivo para análisis de datos con visualizaciones dinámicas y reportes en tiempo real.",
-    technologies: ["Vue.js", "D3.js", "Express", "PostgreSQL"],
-    liveUrl: "#",
-    githubUrl: "#"
+    technologies: ["React", "NodeJs", "Express", "SQL"],
+    liveUrl: "https://finanzas-personales-sba8.onrender.com/",
+    githubUrl: "https://github.com/andrew9798/Finanzas_Personales.git",
+    imageUrl: "/dashboard.png"
   },
-  {
-    title: "App Móvil Híbrida",
-    description: "Aplicación móvil multiplataforma para gestión de tareas con sincronización en la nube y notificaciones push.",
-    technologies: ["React Native", "Firebase", "Redux"],
-    liveUrl: "#",
-    githubUrl: "#"
-  }
+  // {
+  //   title: "App Móvil Híbrida",
+  //   description: "Aplicación móvil multiplataforma para gestión de tareas con sincronización en la nube y notificaciones push.",
+  //   technologies: ["React Native", "Firebase", "Redux"],
+  //   liveUrl: "#",
+  //   githubUrl: "#",
+  //   imageUrl: "../public/dashboard.png"
+  // }
 ];
 ---
 
-<section id="proyectos" class="py-20 bg-light text-primary">
+<section id="proyectos" class="py-20 bg-light text-primary flex flex-col md:flex-row">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <h2 class="text-4xl md:text-5xl text-primary font-serif font-light mb-6">Proyectos Destacados</h2>
       <div class="w-24 h-px bg-amber-600 mx-auto"></div>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Lista de proyectos en Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-20 auto-cols-min">
       {projects.map((project, index) => (
         <div class="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg rounded-lg overflow-hidden bg-white hover:scale-105 transition-transform duration-500">
           <!-- Imagen del proyecto -->
           <div class="aspect-video bg-gray-200 overflow-hidden">
             <div class="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-              <svg class="text-gray-500 w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-              </svg>
+              <img src={project.imageUrl} alt={project.title} />
             </div>
           </div>
           
