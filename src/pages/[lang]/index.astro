@@ -9,16 +9,29 @@ import Skills from '../../components/Skills.astro';
 import Contact from '../../components/Contact.astro';
 import Footer from '../../components/Footer.astro';
 import '../../styles/global.css';
+
+import { useTranslations, type Lang } from '../../i118n/index.ts';
+
+// Definir idiomas disponibles
+export async function getStaticPaths() {
+  return ['es', 'en', 'de'].map(lang => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+
+// Obtener función de traducciones
+const t = useTranslations(lang);
 ---
 
-<Layout title="Portafolio - Desarrollador Web">
-  <Navigation />
+<Layout title={t('meta.title')} lang={lang}>
+  <Navigation t={t} />
   <main>
-    <Hero />
-    <About />
-    <Projects />
-    <Knowledge />
-    <Contact />
+    <Hero t={t} />
+    <About t={t} />
+    <Projects t={t} />
+    <Knowledge t={t} />
+    <Skills t={t} />
+    <Contact t={t} />
   </main>
-  <Footer />
+  <Footer t={t} />
 </Layout>
