@@ -1,24 +1,17 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import Hero from '../components/Hero.astro';
-import About from '../components/About.astro';
-import Projects from '../components/Projects.astro';
-import Knowledge from '../components/Knowledge.astro';
-import Skills from '../components/Skills.astro';
-import Contact from '../components/Contact.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
----
+const supportedLangs = ["es", "en", "de"];
 
-<Layout title="Portafolio - Desarrollador Web">
-  <Navigation />
-  <main>
-    <Hero />
-    <About />
-    <Projects />
-    <Knowledge />
-    <Contact />
-  </main>
-  <Footer />
-</Layout>
+// Leer el idioma del navegador
+const acceptLanguage = Astro.request.headers.get("accept-language");
+
+// Ej: "de-DE,de;q=0.9,en;q=0.8"
+const browserLang = acceptLanguage?.split(",")[0]?.slice(0, 2);
+
+// Elegir idioma final
+const lang = supportedLangs.includes(browserLang)
+  ? browserLang
+  : "es";
+
+// Redirección
+return Astro.redirect(`/${lang}`);
+---
