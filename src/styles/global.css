@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@import "flag-icons/css/flag-icons.min.css";
+
 @theme {
   /* Colores personalizados */
   --color-primary: #B09145;

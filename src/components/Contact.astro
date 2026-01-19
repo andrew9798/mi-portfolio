@@ -1,25 +1,24 @@
 ---
-// Componente Contact
+const { t } = Astro.props; // Recibimos la función de traducción
+const data = t("contact");
 ---
 
 <section id="contacto" class="py-20 bg-light text-primary">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-4xl md:text-5xl font-serif font-light text-primary mb-6">
-      Contacto
-    </h2>
+    <!-- Título -->
+    <h2 class="text-4xl md:text-5xl font-serif font-light text-primary mb-6">{data.title}</h2>
     <div class="w-24 h-px bg-primary mx-auto mb-8"></div>
-    <p class="text-xl text-text-light mb-12">
-      ¿Tienes un proyecto en mente? Me encantaría colaborar contigo para crear
-      algo extraordinario.
-    </p>
-    <!-- modify this form HTML and place wherever you want your form -->
+    
+    <!-- Texto introductorio -->
+    <p class="text-xl text-text-light mb-12">{data.text}</p>
+    
+    <!-- Formulario -->
     <form
       id="contact-form"
       action="https://formspree.io/f/xblzqlpz"
       method="POST"
       class="relative rounded-3xl border-none border-secondary backdrop-blur-xl shadow-2xl p-6 sm:p-8 bg-gradient-to-br from-light via-dark/30 to-light"
     >
-
       <div class="space-y-5">
         <label class="block">
           <input
@@ -27,7 +26,7 @@
             name="email"
             required
             autocomplete="email"
-            placeholder="tu@email.com"
+            placeholder={data.emailPlaceholder}
             class="mt-2 w-full rounded-xl border border-dark/10 bg-secondary/70 px-4 py-3 text-light placeholder-white/50 shadow-inner outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/40 transition"
           />
         </label>
@@ -37,49 +36,30 @@
             name="message"
             rows="5"
             required
-            placeholder="¡Hola! Me interesa tu trabajo en..."
+            placeholder={data.messagePlaceholder}
             class="mt-2 w-full rounded-xl border border-dark/10 bg-secondary/70 px-4 py-3 text-light placeholder-white/50 shadow-inner outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/40 transition"
           ></textarea>
         </label>
 
         <!-- Honeypot anti-spam (oculto) -->
-        <input
-          type="text"
-          name="_gotcha"
-          class="hidden"
-          tabindex="-1"
-          autocomplete="off"
-        />
+        <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
       </div>
 
       <button
         type="submit"
         class="rounded-full inline-flex items-center bg-primary border-2 border-primary hover:bg-light text-light hover:text-primary px-5 py-2 text-md font-medium transition-all duration-1000 transform hover:scale-105"
       >
-        <svg
-          class="w-5 h-5 mr-2"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-          ></path>
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
         </svg>
-        Enviar Mensaje
+        {data.button}
       </button>
 
       <!-- Mensaje de estado -->
       <p id="status" class="mt-4 hidden rounded-lg border p-3 text-sm"></p>
 
-      <!-- Nota de privacidad (opcional) -->
-      <p class="mt-4 text-xs text-white/60">
-        Al enviar, aceptas que use tu email para responderte. No comparto tu
-        información con terceros.
-      </p>
+      <!-- Nota de privacidad -->
+      <p class="mt-4 text-xs text-white/60">{data.privacyNote}</p>
     </form>
   </div>
 </section>

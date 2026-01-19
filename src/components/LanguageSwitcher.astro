@@ -1,0 +1,24 @@
+---
+const { lang } = Astro.props;
+console.log("el lang es:", lang);
+
+// Definimos cada idioma con su bandera usando flag-icons
+const languages = [
+  { code: "es", class: "fi fi-es", alt: "Español", href: "/es" },
+  { code: "en", class: "fi fi-gb", alt: "English", href: "/en" },
+  { code: "de", class: "fi fi-de", alt: "Deutsch", href: "/de" },
+];
+---
+
+<nav class="flex gap-3">
+  {languages.map((l) => (
+    <a
+      href={l.href}
+      class={`transition-transform hover:scale-110 text-2xl ${lang === l.code ? "opacity-100" : "opacity-50 hover:opacity-100"}`}
+      aria-label={l.alt}
+      title={l.alt}
+    >
+      <span class={`${l.class}`}></span>
+    </a>
+  ))}
+</nav>

@@ -1,6 +1,8 @@
 ---
 import TechElement from "./techElement.astro";
-
+// Si quieres soportar multi-idioma, puedes pasar lang como prop
+const { t } = Astro.props; // Recibimos la función de traducción
+const data = t("skills");
 
 const LOGOS = [
     {
@@ -71,7 +73,7 @@ const LOGOS = [
     class="container m-auto flex-col items-center justify-center flex lg:max-w-full lg:h-screen bg-light"
 >
     <h2 class="text-4xl md:text-5xl font-serif text-primary font-light mb-6 text-center mt-10">
-        Habilidades y Conocimientos
+        {data.title}
     </h2>
     <div
         id="knowledge-content"

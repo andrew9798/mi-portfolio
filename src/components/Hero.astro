@@ -1,60 +1,58 @@
 ---
-// Componente Hero
+// Importa tu archivo de traducciones según el idioma activo
+// Ejemplo: para español
+const { t } = Astro.props; // Recibimos la función de traducción
+const data = t("hero");
 ---
 
 <section id="inicio" class="min-h-screen flex items-center justify-center bg-black text-white relative overflow-hidden">
-  <!-- <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div> -->
-   <div
-    class="absolute inset-0 bg-light"
-   ></div>
+  <!-- Fondo -->
+  <div class="absolute inset-0 bg-light"></div>
   
   <div class="relative z-10 text-center max-w-4xl mx-auto px-4">
+    <!-- Título -->
     <h1 class="text-5xl md:text-7xl font-serif font-primary text-primary mb-6 tracking-wide animate-fade-in-up">
       AndresDev
     </h1>
+
+    <!-- Subtítulo -->
     <p class="text-xl md:text-2xl text-text-light mb-8 font-light animate-fade-in-up-delay">
-      Desarrollador Full-Stack especializado en crear experiencias web excepcionales
+      {data.subtitle}
     </p>
+
+    <!-- Botón -->
     <div class="animate-fade-in-up-delay-2">
       <a 
         href="#proyectos"
         class="inline-block bg-transparent border-2 border-primary rounded-full text-primary hover:bg-black/5 px-8 py-3 text-lg font-medium transition-all duration-1000 transform "
       >
-        Ver Proyectos
+        {data.cta}
       </a>
     </div>
   </div>
   
   <!-- Indicador de scroll -->
   <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-    <a href="#acerca"><svg class="text-primary w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-    </svg></a>
-    
+    <a href="#acerca">
+      <svg class="text-primary w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </a>
   </div>
 </section>
 
 <style>
-  @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-fade-in-up {
-    animation: fade-in-up 0.8s ease-out 0.2s both;
-  }
-
-  .animate-fade-in-up-delay {
-    animation: fade-in-up 0.8s ease-out 0.4s both;
-  }
-
-  .animate-fade-in-up-delay-2 {
-    animation: fade-in-up 0.8s ease-out 0.6s both;
-  }
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out 0.2s both;
+}
+.animate-fade-in-up-delay {
+  animation: fade-in-up 0.8s ease-out 0.4s both;
+}
+.animate-fade-in-up-delay-2 {
+  animation: fade-in-up 0.8s ease-out 0.6s both;
+}
 </style>
