@@ -51,15 +51,15 @@ export const es = {
                 githubUrl: "#",
                 imageUrl: "/dashboard.png",
             },
-            {
-                title: "Gestor de Finanzas Personales",
-                description:
-                    "Panel de control interactivo para análisis de datos con visualizaciones dinámicas y reportes en tiempo real.",
-                technologies: ["React", "NodeJs", "Express", "SQL"],
-                liveUrl: "https://finanzas-personales-sba8.onrender.com/",
-                githubUrl: "https://github.com/andrew9798/Finanzas_Personales.git",
-                imageUrl: "/dashboard.png",
-            },
+            // {
+            //     title: "Gestor de Finanzas Personales",
+            //     description:
+            //         "Panel de control interactivo para análisis de datos con visualizaciones dinámicas y reportes en tiempo real. Panel de control interactivo para análisis de datos",
+            //     technologies: ["React", "NodeJs", "Express", "SQL"],
+            //     liveUrl: "https://finanzas-personales-sba8.onrender.com/",
+            //     githubUrl: "https://github.com/andrew9798/Finanzas_Personales.git",
+            //     imageUrl: "/dashboard.png",
+            // },
         ],
     },
     skills: {

@@ -50,15 +50,15 @@ export const en = {
                 githubUrl: "#",
                 imageUrl: "/dashboard.png",
             },
-            {
-                title: "Personal Finance Manager",
-                description:
-                    "Interactive dashboard for data analysis with dynamic visualizations and real-time reports.",
-                technologies: ["React", "NodeJs", "Express", "SQL"],
-                liveUrl: "https://finanzas-personales-sba8.onrender.com/",
-                githubUrl: "https://github.com/andrew9798/Finanzas_Personales.git",
-                imageUrl: "/dashboard.png",
-            },
+            // {
+            //     title: "Personal Finance Manager",
+            //     description:
+            //         "Interactive dashboard for data analysis with dynamic visualizations and real-time reports.",
+            //     technologies: ["React", "NodeJs", "Express", "SQL"],
+            //     liveUrl: "https://finanzas-personales-sba8.onrender.com/",
+            //     githubUrl: "https://github.com/andrew9798/Finanzas_Personales.git",
+            //     imageUrl: "/dashboard.png",
+            // },
         ],
     },
     skills: {
